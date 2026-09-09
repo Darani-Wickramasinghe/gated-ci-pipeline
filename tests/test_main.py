@@ -7,7 +7,7 @@ client = TestClient(app)
 def test_root():
     response = client.get("/")
     assert response.status_code == 200
-    assert response.json() == {"message": "Hello CI Pipeline BROKEN"}
+    assert response.json() == {"message": "Hello CI Pipeline"}
 
 
 def test_health():
