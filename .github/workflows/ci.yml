@@ -34,7 +34,7 @@ jobs:
       - name: Run tests
         run: python -m pytest
 
-       - name: Check secret exists
+      - name: Check secret exists
         env:
           API_KEY: ${{ secrets.API_KEY }}
         run: |
