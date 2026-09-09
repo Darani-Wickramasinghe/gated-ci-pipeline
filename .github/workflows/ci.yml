@@ -33,3 +33,14 @@ jobs:
 
       - name: Run tests
         run: python -m pytest
+
+       - name: Check secret exists
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+        run: |
+          if [ -z "$API_KEY" ]; then
+            echo "Secret is missing"
+            exit 1
+          else
+            echo "Secret is configured"
+          fi
